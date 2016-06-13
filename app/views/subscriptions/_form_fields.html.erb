@@ -1,0 +1,31 @@
+  <span class="payment-errors"></span>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">
+    Card Number
+    </label>
+    <div class="col-sm-9">
+      <input <% if Rails.env.development? %>value="4242424242424242"<%end%> type="text" size="20" data-stripe="number" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label">
+      Expiration (MM/YY)
+    </label>
+    <div class="col-sm-9">
+      <div class="input-group">
+        <input <% if Rails.env.development? %>value="12"<%end%> type="text" size="2" data-stripe="exp_month" class="form-control">
+        <span class="input-group-addon transparent"> / </span>
+        <input <% if Rails.env.development? %>value="20"<%end%> type="text" size="2" data-stripe="exp_year" class="form-control">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label">
+      CVC
+    </label>
+    <div class="col-sm-9">
+      <input <% if Rails.env.development? %>value="123"<%end%> type="text" size="4" data-stripe="cvc" class="form-control">
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SiteTitle</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'https://js.stripe.com/v2/', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= tag :meta, name: "stripe-key", content: ENV["stripe_publishable_key"]%>
+</head>
+<body>
+  <%= render partial: "shared/navbar" %>
+  <div class="container">
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: "alert alert-"+name %>
+    <% end -%>
+  </div>
+  <div>
+    <%= yield :full_width %>
+  </div>
+  <div class="container">
+    <h1 class="page-title">
+      <%= yield :page_title %>
+    </h1>
+    <%= yield %>
+  </div>
+
+  <div class="mastfoot">
+    <div class="inner text-muted">
+      <p>SiteName designed for Some Reason, by Your Name</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+# Configure Using Gemfile
+# gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: RailsStart_development
+
+test:
+  <<: *default
+  database: RailsStart_test
+
+production:
+  <<: *default
+  database: RailsStart_production
+  username: RailsStart
+  password: <%= ENV['ALIASNERD_DATABASE_PASSWORD'] %>

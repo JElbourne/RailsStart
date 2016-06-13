@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: subscribed
+  stripe_charge_id: "sadf2324rdsf"
+  amount_in_cents: 1
+  card_last4: "4242"
+  card_exp_month: 1
+  card_exp_year: 1
+  card_type: "Visa"
+
+two:
+  user: subscribed
+  stripe_charge_id: "213sd32412"
+  amount_in_cents: 1
+  card_last4: "5555"
+  card_exp_month: 1
+  card_exp_year: 1
+  card_type: "MasterCard"

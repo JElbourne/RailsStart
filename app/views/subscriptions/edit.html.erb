@@ -1,0 +1,26 @@
+<% content_for :page_title do %>
+    Subscription Info
+<% end %>
+
+<%= render partial: "sub_info" %>
+
+<h3>Current Card on File</h3>
+
+<div><%= current_user.card_type %> **** **** **** <%=current_user.card_last4 %></div>
+<div>Expires: <%= current_user.card_exp_month %> / <%=current_user.card_exp_year %></div>
+
+<hr />
+<h3>Edit Card Information</h3>
+<%= form_tag card_path, method: :put, id: "payment-form", class: "form-horizontal" do %>
+    <%= render partial: "form_fields"  %>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+            <input type="submit" class="btn btn-default" value="Submit Payment">
+        </div>
+    </div>
+<% end %>
+<hr />
+<h3>Cancel Subscription</h3>
+<p>Unhappy? <%= button_to "Cancel my subscription", subscription_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs" %></p>
+<hr />
+
